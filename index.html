@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LiveWell Circle — A Lifestyle Offering by Max Estates</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- AOS - Animate On Scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- NAV -->
+<header class="site-nav" id="siteNav">
+  <a href="#" class="nav-mark" aria-label="LiveWell Circle">
+    <img class="nav-logo" src="assets/images/livewell-logo.png" alt="LiveWell Circle">
+  </a>
+  <nav class="nav-links" aria-label="Main navigation">
+    <a href="#manifesto">Philosophy</a>
+    <a href="#partners">Partners</a>
+    <a href="#residences">Residences</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a href="#contact" class="nav-cta">Member Access</a>
+  <button class="nav-burger" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="offcanvas offcanvas-end mobile-nav" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+  <div class="offcanvas-header">
+    <p class="offcanvas-title eyebrow on-dark" id="mobileNavLabel">Menu</p>
+    <button type="button" class="mobile-nav-close" data-bs-dismiss="offcanvas" aria-label="Close menu">
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <nav class="mobile-nav-links" aria-label="Mobile navigation">
+      <a href="#manifesto">Philosophy</a>
+      <a href="#partners">Partners</a>
+      <a href="#residences">Residences</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="mobile-nav-cta">Member Access</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-frame"></div>
+  <p class="hero-eyebrow eyebrow on-dark">A Lifestyle Offering by Max&nbsp;Estates</p>
+  <img class="hero-word" src="assets/images/livewell-wordmark.png" alt="LiveWell Circle">
+  <p class="hero-tag">A curated ecosystem of partnership, privileges and experiences — for those who live well, on purpose.</p>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto on-light" id="manifesto">
+  <div class="section-inner center">
+    <div class="divider-mark" data-aos="fade-up">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#8C7338" stroke-width="1.4"/><circle cx="12" cy="12" r="2.4" fill="#8C7338"/></svg>
+    </div>
+    <p class="eyebrow on-light" data-aos="fade-up" data-aos-delay="100">More than a loyalty programme</p>
+    <h2 data-aos="fade-up" data-aos-delay="200">This isn't a rewards app.<br>It's a circle you <em>belong</em> to.</h2>
+    <p data-aos="fade-up" data-aos-delay="300">As the world grows louder and faster, we're building something quieter. The LiveWell Circle is a thoughtfully curated ecosystem of partnerships, privileges and experiences — handpicked, not aggregated — brought together by shared taste, values and vision. Every brand inside it was chosen to add a genuine dimension to everyday well-being, across fitness, mindfulness, health, home, travel and dining.</p>
+  </div>
+</section>
+
+<!-- STATEMENT / TREE -->
+<section class="statement">
+  <div class="container-fluid px-0">
+    <div class="row align-items-center g-5 g-xl-0 section-inner">
+      <div class="col-lg-6">
+        <div class="statement-text" data-aos="fade-up">
+          <p class="eyebrow on-dark">Our Philosophy</p>
+          <h3>Real well-being<br><em>begins here.</em></h3>
+          <p>As the world around us grows increasingly tech-driven and fast-paced, we find ourselves seeking what truly matters — connection. Well-being isn't bought in a single transaction. It's tended to, quietly, every day — much like this tree.</p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="tree-frame" data-aos="fade-up" data-aos-delay="200">
+          <img src="assets/images/tree.jpeg" alt="A tree symbolising growth and well-being">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-band">
+  <div class="marquee-track" id="marqueeTrack"></div>
+</div>
+
+<!-- PARTNERS -->
+<section class="partners" id="partners">
+  <div class="partners-head" data-aos="fade-up">
+    <p class="eyebrow on-light">Our Partners</p>
+    <h2>Eighteen brands. One philosophy.</h2>
+  </div>
+
+  <div class="partners-tabs section-inner" data-aos="fade-up" data-aos-delay="100">
+    <div class="partner-dropdown" id="partnerDropdown">
+      <button class="partner-dropdown-toggle" type="button" id="partnerDropdownToggle" aria-expanded="false" aria-haspopup="listbox" aria-controls="partnerDropdownMenu">
+        <span class="partner-dropdown-label" id="partnerDropdownLabel">Wellness &amp; Spa</span>
+        <svg class="partner-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <ul class="partner-dropdown-menu" id="partnerDropdownMenu" role="listbox" aria-label="Partner categories"></ul>
+    </div>
+
+    <div class="partner-tabs" id="partnerTabs" role="tablist">
+    <button class="partner-tab-pill" id="tab-all-btn" data-bs-toggle="tab" data-bs-target="#tab-all" type="button" role="tab" aria-controls="tab-all" aria-selected="false">All</button>
+    <button class="partner-tab-pill active" id="tab-wellness-spa-btn" data-bs-toggle="tab" data-bs-target="#tab-wellness-spa" type="button" role="tab" aria-controls="tab-wellness-spa" aria-selected="true">Wellness &amp; Spa</button>
+    <button class="partner-tab-pill" id="tab-beauty-ayurveda-btn" data-bs-toggle="tab" data-bs-target="#tab-beauty-ayurveda" type="button" role="tab" aria-controls="tab-beauty-ayurveda" aria-selected="false">Beauty & Ayurveda</button>
+    <button class="partner-tab-pill" id="tab-food-dining-btn" data-bs-toggle="tab" data-bs-target="#tab-food-dining" type="button" role="tab" aria-controls="tab-food-dining" aria-selected="false">Food & Dining</button>
+    <button class="partner-tab-pill" id="tab-fitness-movement-btn" data-bs-toggle="tab" data-bs-target="#tab-fitness-movement" type="button" role="tab" aria-controls="tab-fitness-movement" aria-selected="false">Fitness & Movement</button>
+    <button class="partner-tab-pill" id="tab-diagnostics-health-btn" data-bs-toggle="tab" data-bs-target="#tab-diagnostics-health" type="button" role="tab" aria-controls="tab-diagnostics-health" aria-selected="false">Diagnostics & Health</button>
+    <button class="partner-tab-pill" id="tab-mind-family-btn" data-bs-toggle="tab" data-bs-target="#tab-mind-family" type="button" role="tab" aria-controls="tab-mind-family" aria-selected="false">Mind & Family</button>
+    <button class="partner-tab-pill" id="tab-travel-stay-btn" data-bs-toggle="tab" data-bs-target="#tab-travel-stay" type="button" role="tab" aria-controls="tab-travel-stay" aria-selected="false">Travel & Stay</button>
+    </div>
+
+    <div class="tab-content partner-tab-content" id="partnerTabContent">
+    <div class="tab-pane fade" id="tab-all" role="tabpanel" aria-labelledby="tab-all-btn" tabindex="0">
+      <div class="cat-block cat-block--stacked">
+        <div class="cat-banner">
+          <img src="assets/images/mood-wellness-spa.jpg" alt="Wellness & Spa">
+          <div class="cat-banner-label">
+            <span class="eyebrow">Category</span>
+            <h3>Wellness & Spa</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">25% OFF</span>
+                    <img src="assets/images/partners/logo-zivaya.png" alt="Relax, recover, recharge logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Relax, recover, recharge</p>
+                    <p class="card-desc">Preferred pricing for therapeutic massages and wellness services to help you relax, recover and recharge.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">20% OFF</span>
+                    <img src="assets/images/partners/logo-antara.png" alt="A holistic approach to health logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">A holistic approach to health</p>
+                    <p class="card-desc">Complimentary wellness consult, Ayurveda consult and a far-infrared sauna session, plus preferred pricing on integrated healthcare therapies.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">20% OFF</span>
+                    <img src="assets/images/partners/logo-tulah.png" alt="Expert-led women's wellness care logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Expert-led women's wellness care</p>
+                    <p class="card-desc">A women's wellness clinic offering personalised, expert-led care for long-term well-being.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">30% OFF</span>
+                    <img src="assets/images/partners/logo-pran.png" alt="Stress management & balance logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Stress management & balance</p>
+                    <p class="card-desc">Preferred pricing on personalised reflexology sessions that support stress management and physical balance.</p>
+                  </div>
+                </article>
+              </div>
+        </div>
+      </div>
+      <div class="cat-block cat-block--stacked">
+        <div class="cat-banner">
+          <img src="assets/images/mood-beauty-ayurveda.jpg" alt="Beauty & Ayurveda">
+          <div class="cat-banner-label">
+            <span class="eyebrow">Category</span>
+            <h3>Beauty & Ayurveda</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">15% OFF</span>
+                    <img src="assets/images/partners/logo-kama.png" alt="Authentic Ayurvedic beauty logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Authentic Ayurvedic beauty</p>
+                    <p class="card-desc">Complimentary consultation and preferred pricing on Ayurvedic beauty and wellness products.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">UP TO 30% OFF</span>
+                    <img src="assets/images/partners/logo-geetanjali.png" alt="A refined approach to beauty logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">A refined approach to beauty</p>
+                    <p class="card-desc">Preferred pricing on premium salon services — expert hair, skin and beauty care, thoughtfully delivered.</p>
+                  </div>
+                </article>
+              </div>
+        </div>
+      </div>
+      <div class="cat-block cat-block--stacked">
+        <div class="cat-banner">
+          <img src="assets/images/mood-food-dining.jpg" alt="Food & Dining">
+          <div class="cat-banner-label">
+            <span class="eyebrow">Category</span>
+            <h3>Food & Dining</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">20% OFF</span>
+                    <img src="assets/images/partners/logo-layrd.png" alt="Nutritious. Delicious. Indulgent. logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Nutritious. Delicious. Indulgent.</p>
+                    <p class="card-desc">Preferred pricing on clean, high-protein meals crafted with wholesome ingredients for a nourishing everyday.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">30% OFF</span>
+                    <img src="assets/images/partners/logo-jungly.png" alt="Wellness in every bite logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Wellness in every bite</p>
+                    <p class="card-desc">Preferred pricing on nutrient-rich snacks that support everyday energy and well-being.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">CURATED MENU</span>
+                    <img src="assets/images/partners/logo-diva_gk.png" alt="Celebrated Italian dining logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Celebrated Italian dining</p>
+                    <p class="card-desc">An exclusively curated four-course menu with wine pairings at DIVA, Greater Kailash.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">WINE ON THE HOUSE</span>
+                    <img src="assets/images/partners/logo-diva_wine.png" alt="Where evenings unwind logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Where evenings unwind</p>
+                    <p class="card-desc">A neighbourhood wine bar in the heart of Khan Market — complimentary glass of sparkling wine with your dine-in experience.</p>
+                  </div>
+                </article>
+              </div>
+        </div>
+      </div>
+      <div class="cat-block cat-block--stacked">
+        <div class="cat-banner">
+          <img src="assets/images/mood-fitness-movement.jpg" alt="Fitness & Movement">
+          <div class="cat-banner-label">
+            <span class="eyebrow">Category</span>
+            <h3>Fitness & Movement</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">10% OFF</span>
+                    <img src="assets/images/partners/logo-tego.png" alt="Performance, every day logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Performance, every day</p>
+                    <p class="card-desc">Preferred pricing on high-performance activewear — premium athletic apparel for everyday performance.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">15% OFF</span>
+                    <img src="assets/images/partners/logo-orae.png" alt="The art of movement logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">The art of movement</p>
+                    <p class="card-desc">Preferred pricing on thoughtfully designed, premium yoga products for inspiring, accessible fitness.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">20% OFF</span>
+                    <img src="assets/images/partners/logo-findyourfit.png" alt="A community-led platform logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">A community-led platform</p>
+                    <p class="card-desc">Preferred pricing and priority access to curated fitness and well-being experiences connecting people through movement.</p>
+                  </div>
+                </article>
+              </div>
+        </div>
+      </div>
+      <div class="cat-block cat-block--stacked">
+        <div class="cat-banner">
+          <img src="assets/images/mood-diagnostics-health.jpg" alt="Diagnostics & Health">
+          <div class="cat-banner-label">
+            <span class="eyebrow">Category</span>
+            <h3>Diagnostics & Health</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">15% OFF</span>
+                    <img src="assets/images/partners/logo-drdangslab.png" alt="Invest in your well-being logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Invest in your well-being</p>
+                    <p class="card-desc">Preferred pricing across routine tests, health packages and advanced diagnostic investigations.</p>
+                  </div>
+                </article>
+              </div>
+        </div>
+      </div>
+      <div class="cat-block cat-block--stacked">
+        <div class="cat-banner">
+          <img src="assets/images/mood-mind-family.jpg" alt="Mind & Family">
+          <div class="cat-banner-label">
+            <span class="eyebrow">Category</span>
+            <h3>Mind & Family</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">25% OFF</span>
+                    <img src="assets/images/partners/logo-mhitr.png" alt="Well-being, from within logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Well-being, from within</p>
+                    <p class="card-desc">Preferred pricing for counselling and well-being programmes designed for working professionals, mothers and seniors.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">MEMBER RATE</span>
+                    <img src="assets/images/partners/logo-learningmatters.png" alt="Curiosity. Creativity. Growth. logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Curiosity. Creativity. Growth.</p>
+                    <p class="card-desc">An education ecosystem nurturing curiosity, creativity and lifelong learning for the youngest members of the Circle.</p>
+                  </div>
+                </article>
+              </div>
+        </div>
+      </div>
+      <div class="cat-block cat-block--stacked">
+        <div class="cat-banner">
+          <img src="assets/images/mood-travel-stay.jpg" alt="Travel & Stay">
+          <div class="cat-banner-label">
+            <span class="eyebrow">Category</span>
+            <h3>Travel & Stay</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">20% OFF</span>
+                    <img src="assets/images/partners/logo-leeu.png" alt="Refined hospitality & vineyards logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Refined hospitality & vineyards</p>
+                    <p class="card-desc">An immersive experience in Franschhoek, South Africa — refined hospitality, award-winning dining and restorative vineyard experiences.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">20% OFF</span>
+                    <img src="assets/images/partners/logo-wild-films-india.png" alt="Nature. Heritage. Renewal. logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Nature. Heritage. Renewal.</p>
+                    <p class="card-desc">Preferred pricing on exclusive nature-led stays at Jobarkhet Estate, an immersive conservation-led Himalayan retreat, with all meals included.</p>
+                  </div>
+                </article>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade show active" id="tab-wellness-spa" role="tabpanel" aria-labelledby="tab-wellness-spa-btn" tabindex="0">
+      <div class="cat-block">
+        <div class="cat-banner">
+          <img src="assets/images/mood-wellness-spa.jpg" alt="Wellness & Spa">
+          <div class="cat-banner-label">
+            <span class="eyebrow">Category</span>
+            <h3>Wellness & Spa</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">25% OFF</span>
+                    <img src="assets/images/partners/logo-zivaya.png" alt="Relax, recover, recharge logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Relax, recover, recharge</p>
+                    <p class="card-desc">Preferred pricing for therapeutic massages and wellness services to help you relax, recover and recharge.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">20% OFF</span>
+                    <img src="assets/images/partners/logo-antara.png" alt="A holistic approach to health logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">A holistic approach to health</p>
+                    <p class="card-desc">Complimentary wellness consult, Ayurveda consult and a far-infrared sauna session, plus preferred pricing on integrated healthcare therapies.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">20% OFF</span>
+                    <img src="assets/images/partners/logo-tulah.png" alt="Expert-led women's wellness care logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Expert-led women's wellness care</p>
+                    <p class="card-desc">A women's wellness clinic offering personalised, expert-led care for long-term well-being.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">30% OFF</span>
+                    <img src="assets/images/partners/logo-pran.png" alt="Stress management & balance logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Stress management & balance</p>
+                    <p class="card-desc">Preferred pricing on personalised reflexology sessions that support stress management and physical balance.</p>
+                  </div>
+                </article>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="tab-beauty-ayurveda" role="tabpanel" aria-labelledby="tab-beauty-ayurveda-btn" tabindex="0">
+      <div class="cat-block">
+        <div class="cat-banner">
+          <img src="assets/images/mood-beauty-ayurveda.jpg" alt="Beauty & Ayurveda">
+          <div class="cat-banner-label">
+            <span class="eyebrow">Category</span>
+            <h3>Beauty & Ayurveda</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">15% OFF</span>
+                    <img src="assets/images/partners/logo-kama.png" alt="Authentic Ayurvedic beauty logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Authentic Ayurvedic beauty</p>
+                    <p class="card-desc">Complimentary consultation and preferred pricing on Ayurvedic beauty and wellness products.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">UP TO 30% OFF</span>
+                    <img src="assets/images/partners/logo-geetanjali.png" alt="A refined approach to beauty logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">A refined approach to beauty</p>
+                    <p class="card-desc">Preferred pricing on premium salon services — expert hair, skin and beauty care, thoughtfully delivered.</p>
+                  </div>
+                </article>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="tab-food-dining" role="tabpanel" aria-labelledby="tab-food-dining-btn" tabindex="0">
+      <div class="cat-block">
+        <div class="cat-banner">
+          <img src="assets/images/mood-food-dining.jpg" alt="Food & Dining">
+          <div class="cat-banner-label">
+            <span class="eyebrow">Category</span>
+            <h3>Food & Dining</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">20% OFF</span>
+                    <img src="assets/images/partners/logo-layrd.png" alt="Nutritious. Delicious. Indulgent. logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Nutritious. Delicious. Indulgent.</p>
+                    <p class="card-desc">Preferred pricing on clean, high-protein meals crafted with wholesome ingredients for a nourishing everyday.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">30% OFF</span>
+                    <img src="assets/images/partners/logo-jungly.png" alt="Wellness in every bite logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Wellness in every bite</p>
+                    <p class="card-desc">Preferred pricing on nutrient-rich snacks that support everyday energy and well-being.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">CURATED MENU</span>
+                    <img src="assets/images/partners/logo-diva_gk.png" alt="Celebrated Italian dining logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Celebrated Italian dining</p>
+                    <p class="card-desc">An exclusively curated four-course menu with wine pairings at DIVA, Greater Kailash.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">WINE ON THE HOUSE</span>
+                    <img src="assets/images/partners/logo-diva_wine.png" alt="Where evenings unwind logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Where evenings unwind</p>
+                    <p class="card-desc">A neighbourhood wine bar in the heart of Khan Market — complimentary glass of sparkling wine with your dine-in experience.</p>
+                  </div>
+                </article>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="tab-fitness-movement" role="tabpanel" aria-labelledby="tab-fitness-movement-btn" tabindex="0">
+      <div class="cat-block">
+        <div class="cat-banner">
+          <img src="assets/images/mood-fitness-movement.jpg" alt="Fitness & Movement">
+          <div class="cat-banner-label">
+            <span class="eyebrow">Category</span>
+            <h3>Fitness & Movement</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">10% OFF</span>
+                    <img src="assets/images/partners/logo-tego.png" alt="Performance, every day logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Performance, every day</p>
+                    <p class="card-desc">Preferred pricing on high-performance activewear — premium athletic apparel for everyday performance.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">15% OFF</span>
+                    <img src="assets/images/partners/logo-orae.png" alt="The art of movement logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">The art of movement</p>
+                    <p class="card-desc">Preferred pricing on thoughtfully designed, premium yoga products for inspiring, accessible fitness.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">20% OFF</span>
+                    <img src="assets/images/partners/logo-findyourfit.png" alt="A community-led platform logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">A community-led platform</p>
+                    <p class="card-desc">Preferred pricing and priority access to curated fitness and well-being experiences connecting people through movement.</p>
+                  </div>
+                </article>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="tab-diagnostics-health" role="tabpanel" aria-labelledby="tab-diagnostics-health-btn" tabindex="0">
+      <div class="cat-block">
+        <div class="cat-banner">
+          <img src="assets/images/mood-diagnostics-health.jpg" alt="Diagnostics & Health">
+          <div class="cat-banner-label">
+            <span class="eyebrow">Category</span>
+            <h3>Diagnostics & Health</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">15% OFF</span>
+                    <img src="assets/images/partners/logo-drdangslab.png" alt="Invest in your well-being logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Invest in your well-being</p>
+                    <p class="card-desc">Preferred pricing across routine tests, health packages and advanced diagnostic investigations.</p>
+                  </div>
+                </article>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="tab-mind-family" role="tabpanel" aria-labelledby="tab-mind-family-btn" tabindex="0">
+      <div class="cat-block">
+        <div class="cat-banner">
+          <img src="assets/images/mood-mind-family.jpg" alt="Mind & Family">
+          <div class="cat-banner-label">
+            <span class="eyebrow">Category</span>
+            <h3>Mind & Family</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">25% OFF</span>
+                    <img src="assets/images/partners/logo-mhitr.png" alt="Well-being, from within logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Well-being, from within</p>
+                    <p class="card-desc">Preferred pricing for counselling and well-being programmes designed for working professionals, mothers and seniors.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">MEMBER RATE</span>
+                    <img src="assets/images/partners/logo-learningmatters.png" alt="Curiosity. Creativity. Growth. logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Curiosity. Creativity. Growth.</p>
+                    <p class="card-desc">An education ecosystem nurturing curiosity, creativity and lifelong learning for the youngest members of the Circle.</p>
+                  </div>
+                </article>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="tab-travel-stay" role="tabpanel" aria-labelledby="tab-travel-stay-btn" tabindex="0">
+      <div class="cat-block">
+        <div class="cat-banner">
+          <img src="assets/images/mood-travel-stay.jpg" alt="Travel & Stay">
+          <div class="cat-banner-label">
+            <span class="eyebrow">Category</span>
+            <h3>Travel & Stay</h3>
+          </div>
+        </div>
+        <div class="row g-4">
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">20% OFF</span>
+                    <img src="assets/images/partners/logo-leeu.png" alt="Refined hospitality & vineyards logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Refined hospitality & vineyards</p>
+                    <p class="card-desc">An immersive experience in Franschhoek, South Africa — refined hospitality, award-winning dining and restorative vineyard experiences.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="card h-100">
+                  <div class="card-logo-strip">
+                    <span class="card-badge">20% OFF</span>
+                    <img src="assets/images/partners/logo-wild-films-india.png" alt="Nature. Heritage. Renewal. logo">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Nature. Heritage. Renewal.</p>
+                    <p class="card-desc">Preferred pricing on exclusive nature-led stays at Jobarkhet Estate, an immersive conservation-led Himalayan retreat, with all meals included.</p>
+                  </div>
+                </article>
+              </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESIDENCES -->
+<section class="residences" id="residences">
+  <div class="section-inner">
+    <p class="eyebrow on-dark" data-aos="fade-up">Exclusively For</p>
+    <h2 data-aos="fade-up" data-aos-delay="100">Homeowners across every Max Estates residence.</h2>
+    <p class="sub" data-aos="fade-up" data-aos-delay="200">Max Estates Limited is the real estate development arm of the Max Group, building premium residential and commercial developments across Delhi NCR — guided by a philosophy of well-being, thoughtful design and community.</p>
+    <div class="d-flex flex-wrap justify-content-center gap-3" data-aos="fade-up" data-aos-delay="300">
+      <div class="estate-chip">Estate 128 · Noida</div>
+      <div class="estate-chip">Estate 360 · Gurugram</div>
+      <div class="estate-chip">The Terraces</div>
+      <div class="estate-chip">Max One</div>
+      <div class="estate-chip">222 Rajpur · Dehradun</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band" id="contact">
+  <div class="section-inner center">
+    <p class="eyebrow on-light" data-aos="fade-up">Already Home</p>
+    <h2 data-aos="fade-up" data-aos-delay="100">Your circle is waiting.</h2>
+    <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
+      <a href="#" class="btn-lwc btn-primary-lwc">Access Member Portal</a>
+      <a href="#" class="btn-lwc btn-ghost-lwc">Speak to Our Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top row g-5">
+    <div class="col-md-6 col-lg-3">
+      <img class="footer-word" src="assets/images/livewell-logo.png" alt="LiveWell Circle">
+      <p>A curated ecosystem of partnership, privileges and experiences — a lifestyle offering by Max Estates.</p>
+    </div>
+    <div class="col-6 col-md-3 footer-col">
+      <h4>Explore</h4>
+      <a href="#manifesto">Philosophy</a>
+      <a href="#partners">Our Partners</a>
+      <a href="#residences">Residences</a>
+    </div>
+    <div class="col-6 col-md-3 footer-col">
+      <h4>Visit</h4>
+      <p>Max Towers, L-20, Plot No C 001/A,<br>Sector 16B, Noida, 201301</p>
+    </div>
+    <div class="col-md-6 col-lg-3 footer-col">
+      <h4>Connect</h4>
+      <a href="tel:+918447128128">+91 8447128128</a>
+      <div class="social-row">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#E8E4D3" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#E8E4D3" stroke="none"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="#E8E4D3" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="7" y1="10" x2="7" y2="17"/><line x1="7" y1="7" x2="7.01" y2="7"/><path d="M11 17v-4a2 2 0 0 1 4 0v4"/><line x1="11" y1="13" x2="15" y2="13"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="#E8E4D3" stroke-width="1.6"><path d="M15 8h-2a2 2 0 0 0-2 2v10M9 13h5"/><circle cx="12" cy="12" r="9"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 LiveWell Circle. All rights reserved.</span>
+    <div class="by-max">
+      <span>A lifestyle offering by</span>
+      <img src="assets/images/max-estates-logo-white.png" alt="Max Estates">
+    </div>
+  </div>
+</footer>
+
+<!-- T&C Modal -->
+<div class="modal fade tnc-modal" id="tncModal" tabindex="-1" aria-labelledby="tncModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow on-light tnc-modal-eyebrow">Terms &amp; Conditions</p>
+          <h2 class="tnc-modal-title" id="tncModalTitle"></h2>
+        </div>
+        <button type="button" class="tnc-modal-close" data-bs-dismiss="modal" aria-label="Close">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div class="modal-body" id="tncModalBody"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Custom JS -->
+<script src="js/tnc.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
