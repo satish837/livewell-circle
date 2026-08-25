@@ -710,19 +710,19 @@ section { position: relative; padding: 130px var(--container-gutter); }
 }
 
 .card-logo-strip {
-  height: 96px;
+  height: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--cream-soft);
-  padding: 18px 22px;
+  background: #fff;
+  padding: 22px 24px;
   position: relative;
 }
 
 .card-logo-strip img {
   display: block;
-  width: min(156px, 68%);
-  height: 48px;
+  width: min(220px, 82%);
+  height: 88px;
   object-fit: contain;
   object-position: center;
   flex-shrink: 0;
@@ -1077,9 +1077,14 @@ footer {
   header.site-nav { padding: 18px var(--container-gutter); }
   header.site-nav.solid { padding: 14px var(--container-gutter); }
   .nav-logo { height: 38px; }
+  .card-logo-strip {
+    height: 120px;
+    padding: 18px 20px;
+  }
+
   .card-logo-strip img {
-    width: min(132px, 72%);
-    height: 40px;
+    width: min(200px, 86%);
+    height: 72px;
   }
 }
 
