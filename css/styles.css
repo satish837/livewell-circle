@@ -883,6 +883,60 @@ section { position: relative; padding: 130px var(--container-gutter); }
 
 .tnc-modal .modal-body a:hover { color: var(--brass-deep); }
 
+/* ---------- app download modal ---------- */
+.app-download-modal .modal-dialog {
+  max-width: 480px;
+}
+
+.app-download-modal .modal-content {
+  background: var(--cream);
+  border: 1px solid var(--line-light);
+  border-radius: 2px;
+  box-shadow: 0 40px 80px -30px rgba(43, 54, 23, .45);
+}
+
+.app-download-modal .modal-header {
+  position: relative;
+  display: block;
+  padding: 32px 72px 20px 32px;
+  border-bottom: 1px solid var(--line-light);
+}
+
+.app-download-modal .modal-body {
+  padding: 28px 32px 36px;
+}
+
+.app-download-copy {
+  margin: 0 0 28px;
+  color: #4b5238;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.app-store-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.app-store-badge {
+  display: block;
+  line-height: 0;
+  transition: transform .25s ease, opacity .25s ease;
+}
+
+.app-store-badge:hover {
+  transform: translateY(-2px);
+  opacity: .92;
+}
+
+.app-store-badge svg {
+  width: auto;
+  height: 48px;
+  display: block;
+}
+
 /* ---------- residences ---------- */
 .residences {
   background: linear-gradient(180deg, var(--forest), var(--forest-deep));

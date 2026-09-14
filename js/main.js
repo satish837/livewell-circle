@@ -1,6 +1,6 @@
 // Nav solid background on scroll + active section highlight
 const nav = document.getElementById('siteNav');
-const navSectionIds = ['manifesto', 'partners', 'residences', 'contact'];
+const navSectionIds = ['manifesto', 'partners', 'contact'];
 const navLinks = document.querySelectorAll('.nav-links a[href^="#"], .mobile-nav-links a[href^="#"]');
 
 function setActiveNavLink() {
