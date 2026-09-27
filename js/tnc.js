@@ -166,9 +166,10 @@ function buildTncHtml(partner) {
 }
 
 function getPartnerIdFromCard(card) {
+  if (card.dataset.partner) return card.dataset.partner;
   const img = card.querySelector('.card-logo-strip img');
   if (!img) return null;
-  const match = img.getAttribute('src')?.match(/partners\/([^./]+)/);
+  const match = img.getAttribute('src')?.match(/partners\/(?:logo-)?([^./]+)/);
   return match ? match[1] : null;
 }
 

@@ -42,7 +42,7 @@ function scrollToSection(id) {
 }
 
 const mobileNav = document.getElementById('mobileNav');
-document.querySelectorAll('#mobileNav a[href^="#"]').forEach((link) => {
+document.querySelectorAll('#mobileNav .mobile-nav-links a[href^="#"]').forEach((link) => {
   link.addEventListener('click', (event) => {
     const hash = link.getAttribute('href');
     if (!hash || hash === '#') return;
@@ -62,33 +62,67 @@ document.querySelectorAll('#mobileNav a[href^="#"]').forEach((link) => {
   });
 });
 
-// Build marquee from partner titles
-const marqueeTitles = [
-  'Relax, recover, recharge',
-  'A holistic approach to health',
-  "Expert-led women's wellness care",
-  'Stress management & balance',
-  'Authentic Ayurvedic beauty',
-  'A refined approach to beauty',
-  'Nutritious. Delicious. Indulgent.',
-  'Wellness in every bite',
-  'Celebrated Italian dining',
-  'Where evenings unwind',
-  'Performance, every day',
-  'The art of movement',
-  'A community-led platform',
-  'Invest in your well-being',
-  'Well-being, from within',
-  'Curiosity. Creativity. Growth.',
-  'Refined hospitality & vineyards',
-  'Nature. Heritage. Renewal.'
-];
+// Hero thumbnail parallax — rise from below on scroll
+(function initHeroParallax() {
+  const hero = document.querySelector('.hero');
+  if (!hero || typeof gsap === 'undefined') return;
 
-const marqueeTrack = document.getElementById('marqueeTrack');
-const loopHTML = marqueeTitles.concat(marqueeTitles).map(title =>
-  `<div class="marquee-item"><span>${title}</span><span class="dot"></span></div>`
-).join('');
-marqueeTrack.innerHTML = loopHTML;
+  const thumbs = gsap.utils.toArray('.hero-thumb');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!thumbs.length) return;
+
+  if (reduceMotion) {
+    gsap.set(thumbs, { y: 0, x: 0, rotation: 0 });
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const riseThroughHero = (pinEnd) => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: hero,
+        start: 'top top',
+        end: pinEnd,
+        pin: true,
+        pinSpacing: true,
+        scrub: 0.9,
+        anticipatePin: 1,
+        invalidateOnRefresh: true
+      }
+    });
+
+    const sequence = thumbs.slice().sort((a, b) => {
+      return (Number(a.dataset.order) || 0) - (Number(b.dataset.order) || 0);
+    });
+
+    sequence.forEach((thumb, i) => {
+      const from = parseFloat(thumb.dataset.from) || (0.9 + i * 0.08);
+      const to = parseFloat(thumb.dataset.to) || -1;
+      const xMove = parseFloat(thumb.dataset.x) || 0;
+      const rotate = parseFloat(thumb.dataset.rotate) || 0;
+
+      tl.fromTo(thumb, {
+        y: () => window.innerHeight * from,
+        x: 0,
+        rotation: 0
+      }, {
+        y: () => window.innerHeight * to,
+        x: xMove,
+        rotation: rotate,
+        duration: 1,
+        ease: 'none'
+      }, i * 0.32);
+    });
+
+    return () => tl.kill();
+  };
+
+  const mm = gsap.matchMedia();
+  mm.add('(min-width: 641px)', () => riseThroughHero('+=240%'));
+  mm.add('(max-width: 640px)', () => riseThroughHero('+=150%'));
+})();
 
 // Initialize AOS
 AOS.init({
