@@ -357,8 +357,8 @@ nav.nav-links a.active::after { width: 100%; }
 .hero-thumb {
   position: absolute;
   margin: 0;
-  padding: 7px;
-  background: var(--cream);
+  padding: 0;
+  background: transparent;
   box-shadow: 0 22px 48px rgba(12, 16, 6, .38);
   will-change: transform;
   transform: translate3d(0, 100vh, 0);
@@ -1184,25 +1184,42 @@ footer {
   .nav-cta { display: none; }
   .nav-burger { display: flex; }
   .nav-end { gap: 0; }
+  .nav-cluster {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+    grid-template-columns: auto;
+    column-gap: 0;
+  }
+  .nav-mark { justify-self: start; }
   .cat-banner { aspect-ratio: 16 / 9; }
   .partner-tabs { display: none; }
   .partner-dropdown { display: block; }
-  .hero-thumb--4,
-  .hero-thumb--5 { display: none; }
   .hero-thumb--1 {
-    width: clamp(120px, 22vw, 180px);
-    top: 18%;
+    width: clamp(100px, 22vw, 140px);
+    top: 16%;
     right: 5%;
   }
   .hero-thumb--2 {
-    width: clamp(110px, 20vw, 160px);
+    width: clamp(92px, 20vw, 128px);
     bottom: 12%;
     left: 5%;
   }
   .hero-thumb--3 {
-    width: clamp(96px, 16vw, 140px);
-    top: 16%;
-    left: 5%;
+    width: clamp(84px, 18vw, 116px);
+    top: 14%;
+    left: 4%;
+  }
+  .hero-thumb--4 {
+    width: clamp(96px, 22vw, 132px);
+    bottom: 14%;
+    right: 4%;
+  }
+  .hero-thumb--5 {
+    width: clamp(76px, 16vw, 104px);
+    top: 50%;
+    right: 6%;
   }
 }
 
@@ -1231,20 +1248,34 @@ footer {
     padding: 108px var(--container-gutter) 80px;
   }
 
-  .hero-thumb--3 { display: none; }
-
   .hero-thumb--1 {
-    width: 118px;
-    top: 16%;
-    right: 4%;
-    padding: 5px;
+    width: 108px;
+    top: 14%;
+    right: 3%;
   }
 
   .hero-thumb--2 {
-    width: 104px;
-    bottom: 10%;
-    left: 4%;
-    padding: 5px;
+    width: 96px;
+    bottom: 9%;
+    left: 3%;
+  }
+
+  .hero-thumb--3 {
+    width: 88px;
+    top: 12%;
+    left: 3%;
+  }
+
+  .hero-thumb--4 {
+    width: 100px;
+    bottom: 11%;
+    right: 3%;
+  }
+
+  .hero-thumb--5 {
+    width: 80px;
+    top: 48%;
+    right: 5%;
   }
 
   .hero-tag { font-size: 16.5px; }

@@ -121,7 +121,7 @@ document.querySelectorAll('#mobileNav .mobile-nav-links a[href^="#"]').forEach((
 
   const mm = gsap.matchMedia();
   mm.add('(min-width: 641px)', () => riseThroughHero('+=240%'));
-  mm.add('(max-width: 640px)', () => riseThroughHero('+=150%'));
+  mm.add('(max-width: 640px)', () => riseThroughHero('+=220%'));
 })();
 
 // Initialize AOS
