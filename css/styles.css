@@ -322,79 +322,63 @@ nav.nav-links a.active::after { width: 100%; }
   content: '';
   position: absolute;
   inset: 0;
-  z-index: 0;
-  background: radial-gradient(60% 50% at 50% 38%, transparent 0%, rgba(15, 19, 7, .4) 100%);
+  z-index: 2;
+  background:
+    radial-gradient(ellipse 50% 38% at 50% 54%, rgba(28, 36, 16, .84) 0%, rgba(28, 36, 16, .46) 50%, transparent 76%),
+    linear-gradient(180deg, rgba(28, 36, 16, .55) 0%, transparent 18%, transparent 78%, rgba(28, 36, 16, .72) 100%);
   pointer-events: none;
 }
 
-.hero-thumbs {
+.hero-carousel {
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  overflow: hidden;
+  isolation: isolate;
 }
 
-.hero-thumb {
+.hero-carousel-ring {
+  --hero-card-w: 220px;
+  --hero-card-h: 275px;
+  --hero-radius: 600px;
+  --hero-perspective: 1100px;
   position: absolute;
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  box-shadow: 0 22px 48px rgba(12, 16, 6, .38);
-  will-change: transform;
-  transform: translate3d(0, 100vh, 0);
+  width: var(--hero-card-w);
+  height: var(--hero-card-h);
+  top: 18%;
+  left: calc(50% - (var(--hero-card-w) / 2));
+  transform-style: preserve-3d;
+  animation: hero-carousel-spin 22s linear infinite;
 }
 
-.hero-thumb img {
+.hero-carousel-card {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #14180c;
+  box-shadow: 0 18px 40px rgba(8, 12, 4, .35);
+  transform:
+    rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+    translateZ(var(--hero-radius));
+}
+
+.hero-carousel-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.hero-thumb--1 {
-  width: clamp(150px, 16vw, 228px);
-  aspect-ratio: 4 / 5;
-  top: 16%;
-  right: 8%;
-  z-index: 3;
-}
-
-.hero-thumb--2 {
-  width: clamp(132px, 14vw, 196px);
-  aspect-ratio: 4 / 5;
-  bottom: 13%;
-  left: 8%;
-  z-index: 3;
-}
-
-.hero-thumb--3 {
-  width: clamp(110px, 12vw, 168px);
-  aspect-ratio: 5 / 4;
-  top: 18%;
-  left: 7%;
-  z-index: 1;
-}
-
-.hero-thumb--4 {
-  width: clamp(128px, 15vw, 220px);
-  aspect-ratio: 16 / 10;
-  bottom: 14%;
-  right: 7%;
-  z-index: 1;
-}
-
-.hero-thumb--5 {
-  width: clamp(96px, 10vw, 148px);
-  aspect-ratio: 5 / 4;
-  top: 54%;
-  right: 4%;
-  z-index: 1;
+@keyframes hero-carousel-spin {
+  from { transform: perspective(var(--hero-perspective)) rotateX(-16deg) rotateY(0deg); }
+  to { transform: perspective(var(--hero-perspective)) rotateX(-16deg) rotateY(360deg); }
 }
 
 .hero-copy {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1216,30 +1200,12 @@ footer {
   .cat-banner { aspect-ratio: 16 / 9; }
   .partner-tabs { display: none; }
   .partner-dropdown { display: block; }
-  .hero-thumb--1 {
-    width: clamp(100px, 22vw, 140px);
-    top: 16%;
-    right: 5%;
-  }
-  .hero-thumb--2 {
-    width: clamp(92px, 20vw, 128px);
-    bottom: 12%;
-    left: 5%;
-  }
-  .hero-thumb--3 {
-    width: clamp(84px, 18vw, 116px);
-    top: 14%;
-    left: 4%;
-  }
-  .hero-thumb--4 {
-    width: clamp(96px, 22vw, 132px);
-    bottom: 14%;
-    right: 4%;
-  }
-  .hero-thumb--5 {
-    width: clamp(76px, 16vw, 104px);
-    top: 50%;
-    right: 6%;
+  .hero-carousel-ring {
+    --hero-card-w: 160px;
+    --hero-card-h: 200px;
+    --hero-radius: 340px;
+    --hero-perspective: 800px;
+    top: 22%;
   }
 }
 
@@ -1268,36 +1234,15 @@ footer {
     padding: 108px var(--container-gutter) 80px;
   }
 
-  .hero-thumb--1 {
-    width: 108px;
-    top: 14%;
-    right: 3%;
+  .hero-carousel-ring {
+    --hero-card-w: 110px;
+    --hero-card-h: 146px;
+    --hero-radius: 190px;
+    --hero-perspective: 620px;
+    top: 26%;
   }
 
-  .hero-thumb--2 {
-    width: 96px;
-    bottom: 9%;
-    left: 3%;
-  }
-
-  .hero-thumb--3 {
-    width: 88px;
-    top: 12%;
-    left: 3%;
-  }
-
-  .hero-thumb--4 {
-    width: 100px;
-    bottom: 11%;
-    right: 3%;
-  }
-
-  .hero-thumb--5 {
-    width: 80px;
-    top: 48%;
-    right: 5%;
-  }
-
+  .hero-carousel-card { border-radius: 8px; }
   .hero-tag { font-size: 16.5px; }
 }
 
@@ -1308,5 +1253,8 @@ footer {
     transition-duration: .01ms !important;
   }
   html { scroll-behavior: auto; }
-  .hero-thumb { transform: none; }
+  .hero-carousel-ring {
+    animation: none;
+    transform: perspective(var(--hero-perspective)) rotateX(-16deg) rotateY(0deg);
+  }
 }

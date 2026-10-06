@@ -62,68 +62,6 @@ document.querySelectorAll('#mobileNav .mobile-nav-links a[href^="#"]').forEach((
   });
 });
 
-// Hero thumbnail parallax — rise from below on scroll
-(function initHeroParallax() {
-  const hero = document.querySelector('.hero');
-  if (!hero || typeof gsap === 'undefined') return;
-
-  const thumbs = gsap.utils.toArray('.hero-thumb');
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (!thumbs.length) return;
-
-  if (reduceMotion) {
-    gsap.set(thumbs, { y: 0, x: 0, rotation: 0 });
-    return;
-  }
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  const riseThroughHero = (pinEnd) => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: hero,
-        start: 'top top',
-        end: pinEnd,
-        pin: true,
-        pinSpacing: true,
-        scrub: 0.9,
-        anticipatePin: 1,
-        invalidateOnRefresh: true
-      }
-    });
-
-    const sequence = thumbs.slice().sort((a, b) => {
-      return (Number(a.dataset.order) || 0) - (Number(b.dataset.order) || 0);
-    });
-
-    sequence.forEach((thumb, i) => {
-      const from = parseFloat(thumb.dataset.from) || (0.9 + i * 0.08);
-      const to = parseFloat(thumb.dataset.to) || -1;
-      const xMove = parseFloat(thumb.dataset.x) || 0;
-      const rotate = parseFloat(thumb.dataset.rotate) || 0;
-
-      tl.fromTo(thumb, {
-        y: () => window.innerHeight * from,
-        x: 0,
-        rotation: 0
-      }, {
-        y: () => window.innerHeight * to,
-        x: xMove,
-        rotation: rotate,
-        duration: 1,
-        ease: 'none'
-      }, i * 0.32);
-    });
-
-    return () => tl.kill();
-  };
-
-  const mm = gsap.matchMedia();
-  mm.add('(min-width: 641px)', () => riseThroughHero('+=240%'));
-  mm.add('(max-width: 640px)', () => riseThroughHero('+=220%'));
-})();
-
 // Initialize AOS
 AOS.init({
   duration: 900,
