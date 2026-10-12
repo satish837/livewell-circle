@@ -62,6 +62,52 @@ document.querySelectorAll('#mobileNav .mobile-nav-links a[href^="#"]').forEach((
   });
 });
 
+// Residences — petals drift into place, same motion as the Max Estates well-being footer
+(function initResidencesPetals() {
+  const section = document.querySelector('.residences');
+  if (!section) return;
+
+  const petal1 = section.querySelector('.residences-petal--1');
+  const petal2 = section.querySelector('.residences-petal--2');
+  const petal3 = section.querySelector('.residences-petal--3');
+  const petals = [petal1, petal2, petal3].filter(Boolean);
+  if (!petals.length) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const showFinal = () => {
+    petals.forEach((petal) => {
+      petal.style.opacity = '1';
+      petal.style.transform = 'none';
+    });
+    if (petal2) petal2.style.transform = 'rotate(34deg)';
+  };
+
+  if (reduceMotion || typeof gsap === 'undefined') {
+    showFinal();
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.set(petal1, { autoAlpha: 0, y: -260, rotation: -28, scale: 0.82, transformOrigin: '50% 50%' });
+  gsap.set(petal2, { autoAlpha: 0, y: -320, rotation: -30, scale: 0.78, transformOrigin: '50% 50%' });
+  gsap.set(petal3, { autoAlpha: 0, y: -380, rotation: -38, scale: 0.88, transformOrigin: '50% 50%' });
+
+  const timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: 'top 50%',
+      toggleActions: 'play none none none',
+      once: true
+    }
+  });
+
+  timeline
+    .to(petal1, { autoAlpha: 1, y: 0, rotation: 0, scale: 1, duration: 2.2, ease: 'power3.out' })
+    .to(petal2, { autoAlpha: 1, y: 0, rotation: 34, scale: 1, duration: 2.2, ease: 'power3.out' }, '-=1.75')
+    .to(petal3, { autoAlpha: 1, y: 0, rotation: 0, scale: 1, duration: 2.2, ease: 'power3.out' }, '-=1.75');
+})();
+
 // Initialize AOS
 AOS.init({
   duration: 900,
